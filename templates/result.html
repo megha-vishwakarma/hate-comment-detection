@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Comment Detector</title>
+    <script>
+        function showToxicityAlert(toxicityScore) {
+            if (toxicityScore > 0.60) {
+                alert("Warning: Comment may be harmful!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Toxic Comment Detector Result</h1>
+    <p>Comment: {{ comment }}</p>
+    <p>Toxicity Score: {{ toxicity_score }}</p>
+
+    <!-- Add the JavaScript code to show the alert -->
+    <script>
+        var toxicityScore = {{ toxicity_score }};
+        showToxicityAlert(toxicityScore);
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone</title>
+</head>
+<style>
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post {
+    margin: 10px;
+}
+
+.post img {
+    width: 400px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.comments input {
+    width: 200px;
+    margin-top: 5px;
+}
+
+.comments button {
+    margin-top: 5px;
+}
+
+
+
+/*Navigation bar*/
+*{transition:all 0.3s ease-in-out;
+}
+
+*body{ font-family: "Poppins", sans-serif;}
+
+
+.navcontainer{
+  clear:both;
+  overflow:auto;
+}
+
+nav{float:right;}
+
+.logo img{float:left;}
+
+ul li{
+  display: inline-block; padding:10px;
+  font-size:20px; font-family: "Poppins", sans-serif;;
+}
+
+ul li:hover{
+  color:rgb(56, 67, 165);
+  font-weight: bold;
+  
+}
+nav ul li:hover {
+  background-color: #dadcde; /* Highlight the navigation bar tile grey on hover */
+}
+
+
+
+</style>
+<div class="navcontainer">
+<div class="logo">
+  <img src="https://github.com/megha-vishwakarma/de/blob/main/i.png?raw=true" alt="" width="200"/>
+  </div>
+<nav>
+  <ul>
+  <li>Home</li>
+  <li>About</li>
+  <li>Messages</li>
+  <li>Help</li>
+  </ul>
+  </nav>
+</div>
+<hr />
+
+<head>
+
+
+
+
+
+<body>
+    <div class="container">
+        <div class="posts">
+            <div class="post">
+                <img src="https://img.freepik.com/free-photo/nature-landscape-with-vegetation-flora_23-2150859681.jpg?size=626&ext=jpg&ga=GA1.1.1611519473.1708622284&semt=sph" alt="Nature 1">
+                <div class="comments">
+                    <input type="text" id="comment1" placeholder="Add a comment...">
+                    <button onsubmit="showToxicityAlert()">Post</button>
+                </div>
+            </div>
+            <div class="post">
+                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/morning-sun-shining-through-trees-in-a-beautiful-forest-free-photo.jpg?w=600&quality=80" alt="Nature 2">
+                <div class="comments">
+                    <input type="text" id="comment2" placeholder="Add a comment...">
+                    <button onsubmit="showToxicityAlert()" onclick="addComment('comment2')">Post</button>
+                </div>
+            </div>
+            <div class="post">
+                <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nature 3">
+                <div class="comments">
+                    <input type="text" id="comment3" placeholder="Add a comment...">
+                    <button onsubmit="showToxicityAlert()" onclick="addComment('comment3')">Post</button>
+                </div>
+            </div>
+            <div class="post">
+                <img src="https://images.pexels.com/photos/4064432/pexels-photo-4064432.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nature 4">
+                <div class="comments">
+                    <input type="text" id="comment4" placeholder="Add a comment...">
+                    <button onsubmit="showToxicityAlert()" onclick="addComment('comment4')">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function addComment(inputId) {
+    var inputElement = document.getElementById(inputId);
+    var comment = inputElement.value;
+    if (comment.trim() !== '') {
+        var commentElement = document.createElement('p');
+        commentElement.textContent = comment;
+        inputElement.parentNode.appendChild(commentElement);
+        inputElement.value = '';
+    }
+}
+
+
+
+function showToxicityAlert(toxicity_Score) {
+            if (Toxicity Score > 0.70) {
+                alert("Warning: Comment may be harmful!, Change the comment");
+            }
+        }
+
+</script>
+</body>
+</html>
